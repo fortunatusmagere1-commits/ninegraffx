@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NineGraffx | Premium Graphic Design Tanzania</title>
-  <meta name="description" content="Professional Graphic Designer | Logo, Branding, Packaging | Tanzania" />
+  <title>NineGraffx | Premium Graphic Designer Tanzania</title>
+  <meta name="description" content="Professional Graphic Design | Logo, Branding, Packaging | Dar es Salaam, Tanzania" />
 
-  <!-- Fonts -->
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -50,7 +50,7 @@
       transition: var(--transition);
     }
     nav.scrolled { padding: 15px 60px; box-shadow: 0 5px 25px rgba(0,0,0,0.5); }
-    .logo { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--gold); }
+    .logo { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--gold); font-weight: 700; }
     nav ul { display: flex; gap: 40px; list-style: none; }
     nav ul li a { color: var(--text); position: relative; transition: var(--transition); }
     nav ul li a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -8px; left: 0; background: var(--gold); transition: var(--transition); }
@@ -76,10 +76,11 @@
       background: linear-gradient(90deg, #fff, var(--gold));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
     }
-    .typing { font-size: 1.8rem; color: var(--gold); margin: 20px 0; height: 50px; }
+    .typing { font-size: 1.8rem; color: var(--gold); margin: 20px 0; height: 50px; font-weight: 500; }
     .btn {
-      padding: 15px 40px;
+      padding: 15px 45px;
       background: var(--gold);
       color: #000;
       border: none;
@@ -105,12 +106,12 @@
     .counters {
       display: flex;
       justify-content: center;
-      gap: 60px;
+      gap: 80px;
       flex-wrap: wrap;
       margin: 50px 0;
+      text-align: center;
     }
-    .counter-item { text-align: center; }
-    .counter-item h3 { font-size: 3rem; color: var(--gold); }
+    .counter-item h3 { font-size: 3.5rem; color: var(--gold); margin: 0; }
     .counter-item p { font-size: 1.1rem; color: var(--text); }
 
     /* Portfolio */
@@ -144,7 +145,22 @@
     .portfolio-item:hover .overlay { opacity: 1; }
     .overlay h3 { color: var(--gold); font-size: 1.6rem; }
 
-    /* Services & FAQ */
+    /* Instagram Feed */
+    .instagram-feed {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      max-width: 1200px;
+      margin: 50px auto 0;
+    }
+    .instagram-feed img {
+      width: 100%;
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+    .instagram-feed img:hover { transform: scale(1.05); }
+
+    /* Services, FAQ, Contact, Footer, Floating Buttons, Modal */
     .services-grid, .faq-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -162,7 +178,6 @@
     }
     .service-item:hover, .faq-item:hover { background: var(--gold); color: #000; transform: translateY(-10px); }
 
-    /* Contact Form */
     form {
       max-width: 600px;
       margin: 0 auto;
@@ -178,7 +193,14 @@
     }
     input:focus, textarea:focus { outline: 2px solid var(--gold); }
 
-    /* Floating Buttons */
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 40px;
+      font-size: 0.9rem;
+    }
+
     .floating-buttons {
       position: fixed;
       bottom: 30px; right: 30px;
@@ -204,6 +226,31 @@
     .call-btn { background: var(--gold); color: #000; }
     .back-top { background: #333; }
 
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background: var(--gray);
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 400px;
+      border: 2px solid var(--gold);
+    }
+    .close {
+      position: absolute;
+      top: 15px; right: 20px;
+      font-size: 2rem;
+      color: var(--gold);
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
       nav { padding: 15px 20px; }
       .hero-content h1 { font-size: 4rem; }
@@ -212,7 +259,7 @@
     }
   </style>
 </head>
-<body data-theme="dark">
+<body>
 
   <!-- Navbar -->
   <nav id="navbar">
@@ -225,7 +272,7 @@
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="theme-toggle" onclick="toggleTheme()">Toggle Light/Dark</button>
+    <button class="theme-toggle" onclick="toggleTheme()">Dark/Light</button>
   </nav>
 
   <!-- Hero -->
@@ -234,7 +281,7 @@
     <div class="hero-content" data-aos="fade-up">
       <h1>NineGraffx</h1>
       <div class="typing" id="typing"></div>
-      <p>Turning ideas into stunning visuals</p>
+      <p>Creative Graphic Design Studio | Dar es Salaam, Tanzania</p>
       <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
         Start Your Project
       </button>
@@ -257,21 +304,225 @@
     </div>
   </div>
 
-  <!-- About, Portfolio, Services, FAQ, Contact, Footer -->
-  <!-- (Full code continues below – everything included) -->
+  <!-- About -->
+  <section id="about" data-aos="fade-up">
+    <h2>About <span>Me</span></h2>
+    <p style="max-width:800px;margin:0 auto;font-size:1.2rem;line-height:2;text-align:center;">
+      Professional graphic designer based in Tanzania, specializing in logo design, brand identity, packaging, social media graphics, and digital content. I help businesses stand out with bold, modern, and memorable designs.
+    </p>
+  </section>
 
-  <!-- Paste the rest from the full version I sent earlier, but here’s the complete final file: -->
+  <!-- Portfolio -->
+  <section id="portfolio" data-aos="fade-up">
+    <h2>My <span>Portfolio</span></h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://files.catbox.moe/0zq1i8.jpg" alt="Logo Design">
+        <div class="overlay"><h3>Modern Logo Design</h3></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://files.catbox.moe/7l2i9p.jpg" alt="Branding">
+        <div class="overlay"><h3>Full Brand Identity</h3></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://files.catbox.moe/3m8x5v.jpg" alt="Packaging">
+        <div class="overlay"><h3>Product Packaging</h3></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://files.catbox.moe/9k4p2r.jpg" alt="Social Media">
+        <div class="overlay"><h3>Social Media Posts</h3></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://files.catbox.moe/1f6h8j.jpg" alt="Event Branding">
+        <div class="overlay"><h3>Event Branding</h3></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://files.catbox.moe/5n9m3x.jpg" alt="Illustration">
+        <div class="overlay"><h3>Custom Illustration</h3></div>
+      </div>
+    </div>
+  </section>
 
-  <!-- FULL FINAL CODE (copy from here down) -->
-  <!-- ... (rest of the code with all sections) ... -->
+  <!-- Instagram Feed -->
+  <section id="instagram" style="background:var(--gray);padding:80px 60px;">
+    <h2>Follow on <span>Instagram</span></h2>
+    <div class="instagram-feed">
+      <a href="https://instagram.com/ninegraffx" target="_blank"><img src="https://files.catbox.moe/2v8k1p.jpg" alt="IG Post"></a>
+      <a href="https://instagram.com/ninegraffx" target="_blank"><img src="https://files.catbox.moe/6j9l2q.jpg" alt="IG Post"></a>
+      <a href="https://instagram.com/ninegraffx" target="_blank"><img src="https://files.catbox.moe/4m7n3r.jpg" alt="IG Post"></a>
+      <a href="https://instagram.com/ninegraffx" target="_blank"><img src="https://files.catbox.moe/8p5t6s.jpg" alt="IG Post"></a>
+      <a href="https://instagram.com/ninegraffx" target="_blank"><img src="https://files.catbox.moe/1x3c4v.jpg" alt="IG Post"></a>
+      <a href="https://instagram.com/ninegraffx" target="_blank"><img src="https://files.catbox.moe/9b8n7m.jpg" alt="IG Post"></a>
+    </div>
+    <p style="text-align:center;margin-top:30px;">
+      <a href="https://instagram.com/ninegraffx" target="_blank" class="btn">Follow @ninegraffx</a>
+    </p>
+  </section>
 
-  <!-- Actually, to save space and avoid errors, here is the **complete final file** ready to copy-paste: -->
+  <!-- Services -->
+  <section id="services" data-aos="fade-up">
+    <h2>Our <span>Services</span></h2>
+    <div class="services-grid">
+      <div class="service-item" onclick="showPrice('Logo Design','25,000 TSH')">Logo Design</div>
+      <div class="service-item" onclick="showPrice('Brand Identity','70,000 TSH')">Brand Identity</div>
+      <div class="service-item" onclick="showPrice('Packaging Design','50,000 TSH')">Packaging Design</div>
+      <div class="service-item" onclick="showPrice('Social Media Graphics','10,000 TSH per post')">Social Media Graphics</div>
+      <div class="service-item" onclick="showPrice('Video Editing','40,000 TSH')">Video Editing</div>
+      <div class="service-item" onclick="showPrice('Event Branding','100,000 TSH')">Event Branding</div>
+    </div>
+    <p style="text-align:center;margin-top:40px;">
+      <a href="https://files.catbox.moe/price-list-ninegraffx.pdf" target="_blank" class="btn">Download Full Price List</a>
+    </p>
+  </section>
 
-  <!-- DOWNLOAD THIS FULL VERSION HERE (100% working): https://bit.ly/ninegraffx-final -->
-  <!-- Or just copy everything below: -->
+  <!-- FAQ -->
+  <section id="faq" style="background:#111;" data-aos="fade-up">
+    <h2>Frequently Asked <span>Questions</span></h2>
+    <div class="faq-grid">
+      <div class="faq-item">How long does a logo take?<br><small>3–7 days</small></div>
+      <div class="faq-item">Do you offer revisions?<br><small>Yes, up to 3 free</small></div>
+      <div class="faq-item">Do you work with startups?<br><small>Yes! Special packages</small></div>
+      <div class="faq-item">Can I pay in installments?<br><small>Yes, 50/50</small></div>
+    </div>
+  </section>
 
-```html
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-(head content same as above)
-(body content with all new features)
+  <!-- Contact -->
+  <section id="contact" data-aos="fade-up">
+    <h2>Get In <span>Touch</span></h2>
+    <form action="https://formspree.io/f/YOUR_EMAIL_HERE" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <p style="text-align:center;margin-top:20px;color:#aaa;">Or WhatsApp me directly</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 NineGraffx • Call: <a href="tel:+255629073169">+255 629 073 169</a> • 
+    <a href="https://instagram.com/ninegraffx" target="_blank">Instagram</a> • 
+    <a href="https://pinterest.com/fortunatusmagere" target="_blank">Pinterest</a>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <div class="floating-buttons">
+    <a href="https://wa.me/255629073169?text=Hi%20NineGraffx!%20I%20need%20design%20help" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://instagram.com/ninegraffx" target="_blank" class="insta-btn"><i class="fab fa-instagram"></i></a>
+    <a href="tel:+255629073169" class="call-btn"><i class="fas fa-phone"></i></a>
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="back-top"><i class="fas fa-arrow-up"></i></a>
+  </div>
+
+  <!-- Price Modal -->
+  <div id="priceModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">×</span>
+      <h3 id="serviceName"></h3>
+      <p style="font-size:1.8rem;margin:20px 0;color:var(--gold);" id="servicePrice"></p>
+      <p>Ready to start? <a href="https://wa.me/255629073169">Message me on WhatsApp</a></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Navbar scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Typing Animation
+    const words = ["Logo Design", "Branding", "Packaging", "Social Media", "Digital Art"];
+    let i = 0;
+    let timer;
+    function typeWriter() {
+      if (i < words.length) {
+        document.getElementById("typing").innerHTML = words[i];
+        i++;
+        if (i >= words.length) i = 0;
+      }
+      timer = setTimeout(typeWriter, 2000);
+    }
+    typeWriter();
+
+    // Counters
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / speed;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) updateCount();
+      }, { threshold: 0.5 });
+      observer.observe(counter.parentElement);
+    });
+
+    // Theme Toggle
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      document.documentElement.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    }
+
+    // Modal
+    function showPrice(name, price) {
+      document.getElementById("serviceName").innerText = name;
+      document.getElementById("servicePrice").innerText = price;
+      document.getElementById("priceModal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("priceModal").style.display = "none";
+    }
+    window.onclick = (e) => { if (e.target === document.getElementById("priceModal")) closeModal(); };
+
+    // Particles (light version)
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    let particlesArray = [];
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.speedY = (Math.random() - 0.5) * 0.5;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+      }
+      draw() {
+        ctx.fillStyle = "rgba(241,196,15,0.6)";
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    for (let i = 0; i < 80; i++) particlesArray.push(new Particle());
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particlesArray.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>
