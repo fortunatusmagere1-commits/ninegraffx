@@ -5,113 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NineGraffx - Your Perfect Destination</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <style>
     /* RESET */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #222; background: #f9f9f9; scroll-behavior: smooth; }
-    a { text-decoration: none; color: inherit; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Roboto',sans-serif; line-height:1.6; color:#222; background:#f9f9f9; scroll-behavior:smooth; }
+    a { text-decoration:none; color:inherit; }
 
     /* NAVBAR */
-    nav { position: fixed; width: 100%; background: #000; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 999; }
-    nav .logo { font-family: 'Pacifico', cursive; font-size: 2rem; }
-    nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    nav ul li a { color: #fff; transition: 0.3s; }
-    nav ul li a:hover { color: #f1c40f; }
+    nav { position:fixed; width:100%; background:#000; color:#fff; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; z-index:999; }
+    nav .logo { font-family:'Pacifico',cursive; font-size:2rem; }
+    nav ul { list-style:none; display:flex; gap:1.5rem; }
+    nav ul li a { color:#fff; transition:0.3s; }
+    nav ul li a:hover { color:#f1c40f; }
 
     /* SECTIONS */
-    section { padding: 100px 50px; }
+    section { padding:100px 50px; }
 
+    /* HOME / HERO */
     #home {
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; height: 100vh; background: #000; color: #fff;
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      text-align:center; height:100vh; color:#fff;
+      background: linear-gradient(-45deg, #ff6b6b, #f1c40f, #1abc9c, #3498db);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
     }
-    #home h1 { font-family: 'Pacifico', cursive; font-size: 4rem; }
-    #home p { font-size: 1.5rem; margin-bottom: 1.5rem; }
-    #home button {
-      padding: 0.8rem 2rem; background: #f1c40f; border: none;
-      font-weight: bold; cursor: pointer; border-radius: 5px; transition: 0.3s;
+    @keyframes gradientBG {
+      0% { background-position:0% 50%; }
+      50% { background-position:100% 50%; }
+      100% { background-position:0% 50%; }
     }
-    #home button:hover { background: #e0b70c; }
+    #home h1 { font-family:'Pacifico',cursive; font-size:4rem; }
+    #home p { font-size:1.5rem; margin-bottom:1.5rem; }
+    #home button { padding:0.8rem 2rem; background:#000; border:none; font-weight:bold; cursor:pointer; border-radius:5px; transition:0.3s; color:#fff; }
+    #home button:hover { background:#f1c40f; color:#000; }
 
     /* ABOUT */
-    #about { background: #fff; text-align: center; }
-    #about h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-    #about p { max-width: 700px; margin: 0 auto; }
+    #about { background:#fff; text-align:center; }
+    #about h2 { font-size:2.5rem; margin-bottom:1rem; }
+    #about p { max-width:700px; margin:0 auto; }
 
     /* PORTFOLIO */
-    #portfolio { background: #f4f4f4; }
-    #portfolio h2 { text-align: center; margin-bottom: 2rem; }
-    .portfolio-grid {
-      display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 1.5rem;
-    }
-    .portfolio-item {
-      position: relative; overflow: hidden; cursor: pointer; border-radius: 10px;
-    }
-    .portfolio-item img { width: 100%; transition: 0.3s; }
-    .portfolio-item:hover img { transform: scale(1.1); }
-    .overlay {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6); color: #fff;
-      display: flex; justify-content: center; align-items: center;
-      opacity: 0; transition: 0.3s;
-    }
-    .portfolio-item:hover .overlay { opacity: 1; }
+    #portfolio { background:#f4f4f4; }
+    #portfolio h2 { text-align:center; margin-bottom:2rem; }
+    .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
+    .portfolio-item { position:relative; overflow:hidden; cursor:pointer; border-radius:10px; transition: transform 0.3s; }
+    .portfolio-item img { width:100%; transition: transform 0.5s ease, box-shadow 0.5s ease; }
+    .portfolio-item:hover img { transform:scale(1.1); box-shadow:0 10px 20px rgba(0,0,0,0.3); }
+    .overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); color:#fff; display:flex; justify-content:center; align-items:center; opacity:0; transition:0.3s; text-align:center; padding:1rem; }
+    .portfolio-item:hover .overlay { opacity:1; }
 
     /* SERVICES */
-    #services { background: #fff; text-align: center; }
-    #services h2 { margin-bottom: 2rem; }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-      gap: 1.5rem;
-    }
-    .service-item {
-      background: #f1f1f1; padding: 1.5rem; border-radius: 10px; cursor: pointer;
-      transition: 0.3s; font-weight: bold;
-    }
-    .service-item:hover { background: #f1c40f; color: #fff; }
+    #services { background:#fff; text-align:center; }
+    #services h2 { margin-bottom:2rem; }
+    .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.5rem; }
+    .service-item { background:#f1f1f1; padding:1.5rem; border-radius:10px; cursor:pointer; transition:0.3s; font-weight:bold; }
+    .service-item:hover { background:#f1c40f; color:#fff; }
 
     /* TESTIMONIALS */
-    #testimonials { background: #f4f4f4; text-align: center; }
-    #testimonials h2 { margin-bottom: 2rem; }
-    .testimonial {
-      max-width: 600px; margin: 0 auto 1.5rem; padding: 1rem;
-      background: #fff; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    /* FLOATING BUTTONS */
-    .floating-buttons {
-      position: fixed; bottom: 25px; right: 25px;
-      display: flex; flex-direction: column; gap: 10px; z-index: 9999;
-    }
-    .floating-buttons a {
-      width: 55px; height: 55px; border-radius: 50%;
-      background: #000; color: #fff; font-size: 25px;
-      display: flex; justify-content: center; align-items: center;
-      text-decoration: none; transition: 0.3s;
-    }
-    .floating-buttons a:hover { transform: scale(1.1); }
-    .whatsapp-btn { background: #25D366; }
-    .call-btn { background: #f1c40f; color: #000; }
+    #testimonials { background:#f4f4f4; text-align:center; position:relative; overflow:hidden; }
+    #testimonials h2 { margin-bottom:2rem; }
+    .testimonial-container { display:flex; transition: transform 0.5s ease; }
+    .testimonial { min-width:300px; max-width:600px; margin:0 auto 1.5rem; padding:1rem; background:#fff; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); flex-shrink:0; margin-right:1rem; }
+    .testimonial-buttons { position:absolute; top:50%; left:0; right:0; display:flex; justify-content:space-between; transform:translateY(-50%); }
+    .testimonial-buttons button { background:#000; color:#fff; border:none; padding:0.5rem 1rem; border-radius:5px; cursor:pointer; opacity:0.6; transition:0.3s; }
+    .testimonial-buttons button:hover { opacity:1; }
 
     /* CONTACT */
-    #contact { text-align: center; background: #fff; }
-    form {
-      max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;
-    }
-    input, textarea {
-      padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;
-    }
-    .submit-btn {
-      background: #000; color: #fff; padding: 1rem; font-weight: bold;
-      border: none; cursor: pointer; border-radius: 5px; transition: 0.3s;
-    }
-    .submit-btn:hover { background: #f1c40f; color: #000; }
+    #contact { text-align:center; background:#fff; }
+    form { max-width:500px; margin:0 auto; display:flex; flex-direction:column; gap:1rem; }
+    input, textarea { padding:0.8rem; border:1px solid #ccc; border-radius:5px; }
+    .submit-btn { background:#000; color:#fff; padding:1rem; font-weight:bold; border:none; cursor:pointer; border-radius:5px; transition:0.3s; }
+    .submit-btn:hover { background:#f1c40f; color:#000; }
 
     /* FOOTER */
-    footer { text-align: center; padding: 1.5rem; background: #000; color: #fff; }
+    footer { text-align:center; padding:1.5rem; background:#000; color:#fff; }
 
+    /* FLOATING BUTTONS */
+    .floating-buttons { position:fixed; bottom:25px; right:25px; display:flex; flex-direction:column; gap:10px; z-index:9999; }
+    .floating-buttons a { width:55px; height:55px; border-radius:50%; background:#000; color:#fff; font-size:25px; display:flex; justify-content:center; align-items:center; text-decoration:none; transition:0.3s; }
+    .floating-buttons a:hover { transform:scale(1.1); }
+    .whatsapp-btn { background:#25D366; }
+    .call-btn { background:#f1c40f; color:#000; }
+    .back-top { background:#f1c40f; color:#000; font-size:20px; }
+
+    /* MODAL */
+    .modal { display:none; position:fixed; z-index:10000; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,0.6); }
+    .modal-content { background:#fff; margin:15% auto; padding:20px; border-radius:10px; max-width:400px; text-align:center; position:relative; }
+    .close { position:absolute; top:10px; right:15px; font-size:25px; cursor:pointer; }
+
+    @media(max-width:768px){ nav ul { flex-direction:column; gap:0.5rem; } }
   </style>
 </head>
 
@@ -131,57 +114,60 @@
   </nav>
 
   <!-- HOME -->
-  <section id="home">
+  <section id="home" data-aos="fade-up">
     <h1>NineGraffx</h1>
     <p>Your Perfect Destination</p>
-    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
-      Contact Me
-    </button>
+    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Contact Me</button>
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
+  <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
     <p>Hello! I'm a passionate graphic designer with years of experience in creating stunning visuals, branding, and digital designs.</p>
   </section>
 
   <!-- PORTFOLIO -->
   <section id="portfolio">
-    <h2>Portfolio</h2>
+    <h2 data-aos="fade-up">Portfolio</h2>
     <div class="portfolio-grid">
-      <div class="portfolio-item"><img src="https://via.placeholder.com/400x300"><div class="overlay">Project 1</div></div>
-      <div class="portfolio-item"><img src="https://via.placeholder.com/400x300"><div class="overlay">Project 2</div></div>
-      <div class="portfolio-item"><img src="https://via.placeholder.com/400x300"><div class="overlay">Project 3</div></div>
-      <div class="portfolio-item"><img src="https://via.placeholder.com/400x300"><div class="overlay">Project 4</div></div>
+      <div class="portfolio-item" data-aos="fade-right" data-aos-delay="100"><img src="https://via.placeholder.com/400x300"><div class="overlay">Project 1</div></div>
+      <div class="portfolio-item" data-aos="fade-left" data-aos-delay="200"><img src="https://via.placeholder.com/400x300"><div class="overlay">Project 2</div></div>
+      <div class="portfolio-item" data-aos="fade-right" data-aos-delay="300"><img src="https://via.placeholder.com/400x300"><div class="overlay">Project 3</div></div>
+      <div class="portfolio-item" data-aos="fade-left" data-aos-delay="400"><img src="https://via.placeholder.com/400x300"><div class="overlay">Project 4</div></div>
     </div>
   </section>
 
   <!-- SERVICES -->
   <section id="services">
-    <h2>Services</h2>
-
+    <h2 data-aos="fade-up">Services</h2>
     <div class="services-grid">
-      <div class="service-item" onclick="showPrice('Logo Design', '25,000 TSH')">Logo Design</div>
-      <div class="service-item" onclick="showPrice('Brand Identity', '70,000 TSH')">Brand Identity</div>
-      <div class="service-item" onclick="showPrice('Packaging Design', '50,000 TSH')">Packaging Design</div>
-      <div class="service-item" onclick="showPrice('Social Media Graphics', '10,000 TSH per post')">Social Media Graphics</div>
-      <div class="service-item" onclick="showPrice('Video Editing', '40,000 TSH')">Video Editing</div>
-      <div class="service-item" onclick="showPrice('Event Branding', '100,000 TSH')">Event Branding</div>
-      <div class="service-item" onclick="showPrice('Marketing Materials', '30,000 TSH')">Marketing Materials</div>
-      <div class="service-item" onclick="showPrice('Illustration', '35,000 TSH')">Illustration</div>
+      <div class="service-item" onclick="showPrice('Logo Design','25,000 TSH')" data-aos="zoom-in" data-aos-delay="100">Logo Design</div>
+      <div class="service-item" onclick="showPrice('Brand Identity','70,000 TSH')" data-aos="zoom-in" data-aos-delay="200">Brand Identity</div>
+      <div class="service-item" onclick="showPrice('Packaging Design','50,000 TSH')" data-aos="zoom-in" data-aos-delay="300">Packaging Design</div>
+      <div class="service-item" onclick="showPrice('Social Media Graphics','10,000 TSH per post')" data-aos="zoom-in" data-aos-delay="400">Social Media Graphics</div>
+      <div class="service-item" onclick="showPrice('Video Editing','40,000 TSH')" data-aos="zoom-in" data-aos-delay="500">Video Editing</div>
+      <div class="service-item" onclick="showPrice('Event Branding','100,000 TSH')" data-aos="zoom-in" data-aos-delay="600">Event Branding</div>
+      <div class="service-item" onclick="showPrice('Marketing Materials','30,000 TSH')" data-aos="zoom-in" data-aos-delay="700">Marketing Materials</div>
+      <div class="service-item" onclick="showPrice('Illustration','35,000 TSH')" data-aos="zoom-in" data-aos-delay="800">Illustration</div>
     </div>
   </section>
 
   <!-- TESTIMONIALS -->
-  <section id="testimonials">
+  <section id="testimonials" data-aos="fade-up">
     <h2>Testimonials</h2>
-    <div class="testimonial">"NineGraffx transformed our brand visuals!"</div>
-    <div class="testimonial">"Amazing work on our video ads."</div>
-    <div class="testimonial">"Highly recommend for branding services."</div>
+    <div class="testimonial-container" id="testimonialContainer">
+      <div class="testimonial">"NineGraffx transformed our brand visuals!"</div>
+      <div class="testimonial">"Amazing work on our video ads."</div>
+      <div class="testimonial">"Highly recommend for branding services."</div>
+    </div>
+    <div class="testimonial-buttons">
+      <button onclick="prevTestimonial()">❮</button>
+      <button onclick="nextTestimonial()">❯</button>
+    </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" data-aos="fade-up">
     <h2>Contact Me</h2>
     <form>
       <input type="text" placeholder="Your Name" required>
@@ -197,18 +183,49 @@
     <a href="tel:+255629073169" style="color:#f1c40f;">Call Me: 0629073169</a> |
     Follow me on
     <a href="https://www.instagram.com/ninegraffx" target="_blank" style="color:#f1c40f;">Instagram</a>,
-    <a href="#" style="color:#f1c40f;">x-Twitter</a>,
-    <a href="https://www.pinterest.com/fortunatusmagere" target="_blank" style="color:#E60023;">Pinterest</a>,
+    <a href="#" target="_blank" style="color:#1DA1F2;">X-Twitter</a>,
+    <a href="https://www.pinterest.com/fortunatusmagere" target="_blank" style="color:#E60023;">Pinterest</a>
   </footer>
 
-  <!-- PRICE POPUP SCRIPT -->
+  <!-- FLOATING BUTTONS -->
+  <div class="floating-buttons">
+    <a href="https://www.instagram.com/ninegraffx" target="_blank" class="whatsapp-btn">📸</a>
+    <a href="#" target="_blank" class="call-btn">☎</a>
+    <a href="https://www.pinterest.com/fortunatusmagere" target="_blank" class="whatsapp-btn">📌</a>
+    <a href="#" class="back-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</a>
+  </div>
+
+  <!-- PRICE MODAL -->
+  <div id="priceModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('priceModal').style.display='none'">&times;</span>
+      <h3 id="serviceName"></h3>
+      <p id="servicePrice"></p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    function showPrice(service, price) {
-      alert(service + " = " + price);
+    AOS.init({ duration:1000, once:true });
+
+    function showPrice(service, price){
+      document.getElementById('serviceName').innerText = service;
+      document.getElementById('servicePrice').innerText = price;
+      document.getElementById('priceModal').style.display='block';
     }
+
+    // Testimonials carousel
+    let currentTestimonial = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    function showTestimonial(index){
+      const container = document.getElementById('testimonialContainer');
+      const width = testimonials[0].offsetWidth + 16;
+      container.style.transform = `translateX(${-width*index}px)`;
+    }
+    function nextTestimonial(){ currentTestimonial = (currentTestimonial+1)%testimonials.length; showTestimonial(currentTestimonial); }
+    function prevTestimonial(){ currentTestimonial = (currentTestimonial-1 + testimonials.length)%testimonials.length; showTestimonial(currentTestimonial); }
+    setInterval(nextTestimonial, 5000); // auto-scroll every 5s
   </script>
 
 </body>
 </html>
-
-
