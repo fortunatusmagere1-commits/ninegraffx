@@ -53,6 +53,48 @@
     #testimonials h2 { margin-bottom: 2rem; }
     .testimonial { max-width: 600px; margin: 0 auto 1.5rem; padding: 1rem; background: #fff; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
+      /* Floating Buttons */
+.floating-buttons {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.floating-buttons a {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
+}
+
+/* Hover animations */
+.floating-buttons a:hover {
+  transform: scale(1.1);
+}
+
+/* WhatsApp special color */
+.whatsapp-btn {
+  background: #25D366;
+}
+
+/* Call button color */
+.call-btn {
+  background: #f1c40f;
+  color: #000;
+}
+    
     /* Contact */
     #contact { background: #fff; text-align: center; }
     #contact h2 { margin-bottom: 2rem; }
@@ -171,6 +213,7 @@
 
 </body>
 </html>
+
 
 
 
