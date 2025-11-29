@@ -8,6 +8,8 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- Fancybox for full image view -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 
   <style>
     :root { --gold: #f1c40f; --dark: #0f0f0f; --gray: #1a1a1a; --light: #eee; }
@@ -39,26 +41,25 @@
     h2 { font-family:'Playfair Display',serif; font-size:3.5rem; margin-bottom:60px; }
     h2 span { color:var(--gold); }
 
-    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:30px; max-width:1400px; margin:0 auto; }
-    .card {
-      background:var(--gray); padding:30px; border-radius:15px; transition:0.4s;
-    }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:30px; max-width:1400px; margin:0 auto; }
+    .card { background:var(--gray); padding:30px; border-radius:15px; transition:0.4s; }
     .card:hover { transform:translateY(-15px); box-shadow:0 20px 40px rgba(0,0,0,0.6); }
 
-    .portfolio-img { width:100%; height:100%; object-fit:cover; border-radius:12px; transition:0.4s; }
+    .portfolio-img { width:100%; height:350px; object-fit:cover; border-radius:15px; transition:0.4s; cursor:pointer; }
     .portfolio-img:hover { transform:scale(1.05); }
 
-    /* Testimonials */
-    .testimonial-card {
-      background:var(--gray); padding:40px 30px; border-radius:15px; text-align:center; border-left:5px solid var(--gold);
-    }
-    .testimonial-card img {
-      width:80px; height:80px; border-radius:50%; border:4px solid var(--gold); margin-bottom:20px;
-    }
-    .stars { color:var(--gold); font-size:1.5rem; margin:15px 0; }
-    .testimonial-card p { font-style:italic; }
+    .about-section { background:#111; padding:120px 5%; display:flex; align-items:center; gap:50px; flex-wrap:wrap; justify-content:center; }
+    .about-text { max-width:600px; text-align:left; }
+    .about-img { width:400px; border-radius:20px; border:5px solid var(--gold); }
 
-    /* WhatsApp Float */
+    .testimonial-card { background:var(--gray); padding:40px 30px; border-radius:15px; text-align:center; border-left:5px solid var(--gold); }
+    .testimonial-card img { width:80px; height:80px; border-radius:50%; border:4px solid var(--gold); margin-bottom:20px; }
+    .stars { color:var(--gold); font-size:1.5rem; margin:15px 0; }
+
+    .counters { background:#111; padding:80px 5%; }
+    .counter-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:40px; text-align:center; }
+    .counter-num { font-size:3.5rem; font-weight:700; color:var(--gold); }
+
     .wa-btn {
       position:fixed; bottom:25px; right:25px; z-index:9999;
       width:70px; height:70px; background:#25D366; border-radius:50%;
@@ -74,8 +75,8 @@
 
     @media (max-width:768px) {
       .hero h1 { font-size:3.8rem; }
-      .nav-links { gap:20px; font-size:0.95rem; }
-      section { padding:80px 5%; }
+      .about-section { flex-direction:column; text-align:center; }
+      .about-img { width:300px; }
     }
   </style>
 </head>
@@ -86,6 +87,7 @@
     <div class="logo">NineGraffx</div>
     <div class="nav-links">
       <a href="#home">Home</a>
+      <a href="#about">About</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#testimonials">Testimonials</a>
       <a href="#services">Services</a>
@@ -103,50 +105,70 @@
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <section id="portfolio">
-    <h2>My <span>Portfolio</span></h2>
-    <div class="grid">
-      <img src="https://files.catbox.moe/0zq1i8.jpg" alt="Logo Design" class="portfolio-img">
-      <img src="https://files.catbox.moe/7l2i9p.jpg" alt="Branding" class="portfolio-img">
-      <img src="https://files.catbox.moe/3m8x5v.jpg" alt="Packaging" class="portfolio-img">
-      <img src="https://files.catbox.moe/9k4p2r.jpg" alt="Social Media" class="portfolio-img">
-      <img src="https://files.catbox.moe/1f6h8j.jpg" alt="Event Branding" class="portfolio-img">
-      <img src="https://files.catbox.moe/5n9m3x.jpg" alt="Illustration" class="portfolio-img">
+  <!-- About -->
+  <section id="about" class="about-section">
+    <img src="https://files.catbox.moe/yourphoto.jpg" alt="Fortunatus Magere" class="about-img">
+    <div class="about-text">
+      <h2>About <span>Me</span></h2>
+      <p style="font-size:1.2rem;">
+        I'm Fortunatus Magere, a passionate graphic designer based in Dar es Salaam with over 5 years of experience. 
+        I specialize in creating stunning logos, complete brand identities, eye-catching packaging, and high-converting social media graphics. 
+        My goal is simple: make your brand stand out and grow.
+      </p>
+      <p style="margin-top:20px 0;">500+ projects completed • 300+ happy clients • Always on time delivery</p>
+      <a href="#contact" class="btn">Work With Me</a>
     </div>
   </section>
 
-  <!-- Testimonials (Vikolombwezo) -->
+  <!-- Counters -->
+  <section class="counters">
+    <div class="counter-grid">
+      <div>
+        <div class="counter-num" data-target="5">0</div>+
+        <p>Years Experience</p>
+      </div>
+      <div>
+        <div class="counter-num" data-target="500">0</div>+
+        <p>Projects Completed</p>
+      </div>
+      <div>
+        <div class="counter-num" data-target="300">0</div>+
+        <p>Happy Clients</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio - PICHA KUBWA KABISA WHEN CLICKED -->
+  <section id="portfolio">
+    <h2>My <span>Portfolio</span></h2>
+    <div class="grid">
+      <a href="https://files.catbox.moe/0zq1i8.jpg" data-fancybox="gallery" data-caption="Logo Design"><img src="https://files.catbox.moe/0zq1i8.jpg" alt="Logo" class="portfolio-img"></a>
+      <a href="https://files.catbox.moe/7l2i9p.jpg" data-fancybox="gallery" data-caption="Brand Identity"><img src="https://files.catbox.moe/7l2i9p.jpg" alt="Branding" class="portfolio-img"></a>
+      <a href="https://files.catbox.moe/3m8x5v.jpg" data-fancybox="gallery" data-caption="Packaging Design"><img src="https://files.catbox.moe/3m8x5v.jpg" alt="Packaging" class="portfolio-img"></a>
+      <a href="https://files.catbox.moe/9k4p2r.jpg" data-fancybox="gallery" data-caption="Social Media Graphics"><img src="https://files.catbox.moe/9k4p2r.jpg" alt="Social" class="portfolio-img"></a>
+      <a href="https://files.catbox.moe/1f6h8j.jpg" data-fancybox="gallery" data-caption="Event Branding"><img src="https://files.catbox.moe/1f6h8j.jpg" alt="Event" class="portfolio-img"></a>
+      <a href="https://files.catbox.moe/5n9m3x.jpg" data-fancybox="gallery" data-caption="Illustration"><img src="https://files.catbox.moe/5n9m3x.jpg" alt="Illustration" class="portfolio-img"></a>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
   <section id="testimonials" style="background:#111;">
     <h2>Client <span>Testimonials</span></h2>
     <div class="grid">
       <div class="testimonial-card">
         <img src="https://files.catbox.moe/client1.jpg" alt="Amina">
-        <h4>Amina K.</h4>
-        <p>CEO, Safari Brew</p>
-        <div class="stars">★★★★★</div>
-        <p>"NineGraffx gave our brand a complete makeover – sales up 200%! Best decision ever."</p>
+        <h4>Amina K.</h4><p>CEO, Safari Brew</p><div class="stars">★★★★★</div>
+        <p>"Best designer I've worked with. Transformed our brand completely!"</p>
       </div>
       <div class="testimonial-card">
         <img src="https://files.catbox.moe/client2.jpg" alt="Juma">
-        <h4>Juma M.</h4>
-        <p>Founder, TechHub DSM</p>
-        <div class="stars">★★★★★</div>
-        <p>"Professional, creative, and super fast delivery. Highly recommend to anyone!"</p>
+        <h4>Juma M.</h4><p>Founder, TechHub DSM</p><div class="stars">★★★★★</div>
+        <p>"Professional, fast, and super creative. 10/10!"</p>
       </div>
       <div class="testimonial-card">
         <img src="https://files.catbox.moe/client3.jpg" alt="Fatma">
-        <h4>Fatma S.</h4>
-        <p>Owner, Nyota Fashion</p>
-        <div class="stars">★★★★★</div>
-        <p>"My packaging now looks premium! Customers love it. Worth every shilling."</p>
-      </div>
-      <div class="testimonial-card">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael">
-        <h4>Michael R.</h4>
-        <p>Marketing Director, Azam Media</p>
-        <div class="stars">★★★★★</div>
-        <p>"Best social media designs in Tanzania. Our engagement went through the roof!"</p>
+        <h4>Fatma S.</h4><p>Owner, Nyota Fashion</p><div class="stars">★★★★★</div>
+        <p>"My sales doubled after the rebrand. Thank you!"</p>
       </div>
     </div>
   </section>
@@ -155,10 +177,10 @@
   <section id="services" style="background:#111;">
     <h2>Services <span>& Pricing</span></h2>
     <div class="grid">
-      <div class="card"><h3>Logo Design</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 25,000+</p><small>From single logo to full package</small></div>
-      <div class="card"><h3>Brand Identity</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 70,000+</p><small>Logo + Business Cards + Social Kit</small></div>
-      <div class="card"><h3>Packaging Design</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 50,000+</p><small>Boxes, labels, stickers</small></div>
-      <div class="card"><h3>Social Media Graphics</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 10,000/post</p><small>Instagram, Facebook, TikTok</small></div>
+      <div class="card"><h3>Logo Design</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 25,000+</p><small>Full package available</small></div>
+      <div class="card"><h3>Brand Identity</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 70,000+</p><small>Logo + cards + social kit</small></div>
+      <div class="card"><h3>Packaging Design</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 50,000+</p><small>Premium look</small></div>
+      <div class="card"><h3>Social Media Graphics</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 10,000/post</p><small>Unlimited revisions</small></div>
     </div>
   </section>
 
@@ -166,7 +188,7 @@
   <section id="contact">
     <h2>Get in <span>Touch</span></h2>
     <p style="font-size:1.3rem;max-width:700px;margin:0 auto 40px;">
-      Ready to level up your brand? Message me now – let's make it happen!
+      Ready to grow your brand? Message me right now!
     </p>
 
     <form action="https://formspree.io/f/fortunatusmagere1@gmail.com" method="POST" style="max-width:600px;margin:0 auto 60px">
@@ -176,13 +198,41 @@
       <button type="submit" class="btn">Send Message</button>
     </form>
 
-    <a href="https://wa.me/255629073169?text=Hi%20NineGraffx!%20I%20came%20from%20your%20website%20and%20need%20design%20design%20work" class="btn wa-big">Message on WhatsApp Now</a>
+    <a href="https://wa.me/255629073169?text=Hi%20NineGraffx!%20I%20saw%20your%20website%20and%20need%20design%20work" class="btn wa-big">Message on WhatsApp Now</a>
   </section>
 
-  <!-- WhatsApp Floating Button – WORKING 100% -->
-  <a href="https://wa.me/255629073169?text=Hi%20NineGraffx!%20I%20came%20from%20your%20website" class="wa-btn" target="_blank">
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/255629073169?text=Hi%20NineGraffx!%20I%20saw%20your%20website" class="wa-btn" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
+
+  <!-- Fancybox Script for Full Image View -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <script>
+    Fancybox.bind("[data-fancybox]", {});
+  </script>
+
+  <!-- Counters Script -->
+  <script>
+    document.querySelectorAll('.counter-num').forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      let count = 0;
+      const updateCounter = () => {
+        const increment = target / 100;
+        if (count < target) {
+          count += increment;
+          counter.innerText = Math.ceil(count);
+          setTimeout(updateCounter, 30);
+        } else {
+          counter.innerText = target + '+';
+        }
+      };
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) updateCounter();
+      }, { threshold: 0.5 });
+      observer.observe(counter.parentElement);
+    });
+  </script>
 
 </body>
 </html>
