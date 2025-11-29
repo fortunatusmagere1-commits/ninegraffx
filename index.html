@@ -8,7 +8,6 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <!-- Fancybox for full image view -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 
   <style>
@@ -29,7 +28,7 @@
 
     .hero {
       height:100vh; display:flex; align-items:center; justify-content:center; text-align:center;
-      background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1558655146-9f40138ed1cb?q=80&w=1964') center/cover no-repeat;
+      background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1626785774624-9512b7e86361?q=80&w=2070') center/cover no-repeat;
     }
     .hero h1 { font-family:'Playfair Display',serif; font-size:5.5rem; margin-bottom:20px; }
     .hero p { font-size:1.4rem; margin:20px 0 40px; }
@@ -45,20 +44,20 @@
     .card { background:var(--gray); padding:30px; border-radius:15px; transition:0.4s; }
     .card:hover { transform:translateY(-15px); box-shadow:0 20px 40px rgba(0,0,0,0.6); }
 
-    .portfolio-img { width:100%; height:350px; object-fit:cover; border-radius:15px; transition:0.4s; cursor:pointer; }
-    .portfolio-img:hover { transform:scale(1.05); }
+    .portfolio-img { width:100%; height:380px; object-fit:cover; border-radius:15px; transition:0.4s; cursor:pointer; }
+    .portfolio-img:hover { transform:scale(1.05); box-shadow:0 15px 30px rgba(0,0,0,0.7); }
 
-    .about-section { background:#111; padding:120px 5%; display:flex; align-items:center; gap:50px; flex-wrap:wrap; justify-content:center; }
+    .about-section { background:#111; padding:120px 5%; display:flex; align-items:center; gap:60px; flex-wrap:wrap; justify-content:center; }
     .about-text { max-width:600px; text-align:left; }
-    .about-img { width:400px; border-radius:20px; border:5px solid var(--gold); }
+    .about-img { width:420px; border-radius:20px; border:6px solid var(--gold); box-shadow:0 15px 40px rgba(0,0,0,0.6); }
 
     .testimonial-card { background:var(--gray); padding:40px 30px; border-radius:15px; text-align:center; border-left:5px solid var(--gold); }
-    .testimonial-card img { width:80px; height:80px; border-radius:50%; border:4px solid var(--gold); margin-bottom:20px; }
-    .stars { color:var(--gold); font-size:1.5rem; margin:15px 0; }
+    .testimonial-card img { width:90px; height:90px; border-radius:50%; border:4px solid var(--gold); margin-bottom:20px; }
+    .stars { color:var(--gold); font-size:1.6rem; margin:15px 0; }
 
     .counters { background:#111; padding:80px 5%; }
-    .counter-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:40px; text-align:center; }
-    .counter-num { font-size:3.5rem; font-weight:700; color:var(--gold); }
+    .counter-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:50px; text-align:center; }
+    .counter-num { font-size:4rem; font-weight:700; color:var(--gold); }
 
     .wa-btn {
       position:fixed; bottom:25px; right:25px; z-index:9999;
@@ -67,11 +66,7 @@
       box-shadow:0 5px 25px rgba(37,211,102,0.8); animation:pulse 2s infinite;
     }
     .wa-btn:hover { transform:scale(1.15); }
-    @keyframes pulse {
-      0% { box-shadow:0 0 0 0 rgba(37,211,102,0.7); }
-      70% { box-shadow:0 0 0 20px rgba(37,211,102,0); }
-      100% { box-shadow:0 0 0 0 rgba(37,211,102,0); }
-    }
+    @keyframes pulse { 0% { box-shadow:0 0 0 0 rgba(37,211,102,0.7); } 70% { box-shadow:0 0 0 20px rgba(37,211,102,0); } 100% { box-shadow:0 0 0 0 rgba(37,211,102,0); } }
 
     @media (max-width:768px) {
       .hero h1 { font-size:3.8rem; }
@@ -99,23 +94,19 @@
   <section id="home" class="hero">
     <div>
       <h1>NineGraffx</h1>
-      <p>Premium Graphic Design • Logo • Branding • Packaging • Social Media</p>
-      <p style="font-size:2rem; color:var(--gold); margin:30px 0;">Dar es Salaam, Tanzania</p>
-      <a href="#contact" class="btn">Start Your Project Today</a>
+      <p>Premium Graphic Design Studio | Dar es Salaam, Tanzania</p>
+      <p style="font-size:2rem; color:var(--gold); margin:30px 0;">Logo • Branding • Packaging • Social Media</p>
+      <a href="#contact" class="btn">Start Your Project</a>
     </div>
   </section>
 
   <!-- About -->
   <section id="about" class="about-section">
-    <img src="https://files.catbox.moe/yourphoto.jpg" alt="Fortunatus Magere" class="about-img">
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Fortunatus Magere" class="about-img">
     <div class="about-text">
-      <h2>About <span>Me</span></h2>
-      <p style="font-size:1.2rem;">
-        I'm Fortunatus Magere, a passionate graphic designer based in Dar es Salaam with over 5 years of experience. 
-        I specialize in creating stunning logos, complete brand identities, eye-catching packaging, and high-converting social media graphics. 
-        My goal is simple: make your brand stand out and grow.
-      </p>
-      <p style="margin-top:20px 0;">500+ projects completed • 300+ happy clients • Always on time delivery</p>
+      <h2>About <span>NineGraffx</span></h2>
+      <p style="font-size:1.2rem;">I'm a passionate graphic designer with 5+ years experience helping brands stand out. From logos to full brand identities, I deliver creative, modern designs that get results.</p>
+      <p style="margin:30px 0;">500+ Projects Completed • 300+ Happy Clients • Fast Delivery</p>
       <a href="#contact" class="btn">Work With Me</a>
     </div>
   </section>
@@ -123,31 +114,22 @@
   <!-- Counters -->
   <section class="counters">
     <div class="counter-grid">
-      <div>
-        <div class="counter-num" data-target="5">0</div>+
-        <p>Years Experience</p>
-      </div>
-      <div>
-        <div class="counter-num" data-target="500">0</div>+
-        <p>Projects Completed</p>
-      </div>
-      <div>
-        <div class="counter-num" data-target="300">0</div>+
-        <p>Happy Clients</p>
-      </div>
+      <div><div class="counter-num" data-target="5">0</div>+<p>Years Experience</p></div>
+      <div><div class="counter-num" data-target="500">0</div>+<p>Projects Delivered</p></div>
+      <div><div class="counter-num" data-target="300">0</div>+<p>Happy Clients</p></div>
     </div>
   </section>
 
-  <!-- Portfolio - PICHA KUBWA KABISA WHEN CLICKED -->
+  <!-- Portfolio – PICHA ZINAFUNGUA KUBWA KABISA -->
   <section id="portfolio">
     <h2>My <span>Portfolio</span></h2>
     <div class="grid">
-      <a href="https://files.catbox.moe/0zq1i8.jpg" data-fancybox="gallery" data-caption="Logo Design"><img src="https://files.catbox.moe/0zq1i8.jpg" alt="Logo" class="portfolio-img"></a>
-      <a href="https://files.catbox.moe/7l2i9p.jpg" data-fancybox="gallery" data-caption="Brand Identity"><img src="https://files.catbox.moe/7l2i9p.jpg" alt="Branding" class="portfolio-img"></a>
-      <a href="https://files.catbox.moe/3m8x5v.jpg" data-fancybox="gallery" data-caption="Packaging Design"><img src="https://files.catbox.moe/3m8x5v.jpg" alt="Packaging" class="portfolio-img"></a>
-      <a href="https://files.catbox.moe/9k4p2r.jpg" data-fancybox="gallery" data-caption="Social Media Graphics"><img src="https://files.catbox.moe/9k4p2r.jpg" alt="Social" class="portfolio-img"></a>
-      <a href="https://files.catbox.moe/1f6h8j.jpg" data-fancybox="gallery" data-caption="Event Branding"><img src="https://files.catbox.moe/1f6h8j.jpg" alt="Event" class="portfolio-img"></a>
-      <a href="https://files.catbox.moe/5n9m3x.jpg" data-fancybox="gallery" data-caption="Illustration"><img src="https://files.catbox.moe/5n9m3x.jpg" alt="Illustration" class="portfolio-img"></a>
+      <a href="https://images.unsplash.com/photo-1626785774624-9512b7e86361?w=1200&q=90" data-fancybox="gallery" data-caption="Modern Logo Design"><img src="https://images.unsplash.com/photo-1626785774624-9512b7e86361?w=800&q=80" class="portfolio-img" alt="Logo"></a>
+      <a href="https://images.unsplash.com/photo-1602576664933-26cad2e0a0e0?w=1200&q=90" data-fancybox="gallery" data-caption="Brand Identity"><img src="https://images.unsplash.com/photo-1602576664933-26cad2e0a0e0?w=800&q=80" class="portfolio-img" alt="Branding"></a>
+      <a href="https://images.unsplash.com/photo-1578662996442-48f60103fcbf?w=1200&q=90" data-fancybox="gallery" data-caption="Packaging Design"><img src="https://images.unsplash.com/photo-1578662996442-48f60103fcbf?w=800&q=80" class="portfolio-img" alt="Packaging"></a>
+      <a href="https://images.unsplash.com/photo-1611342799915-9f2b6b4362b6?w=1200&q=90" data-fancybox="gallery" data-caption="Social Media Posts"><img src="https://images.unsplash.com/photo-1611342799915-9f2b6b4362b6?w=800&q=80" class="portfolio-img" alt="Social"></a>
+      <a href="https://images.unsplash.com/photo-1597733336794-12d4cab63b19?w=1200&q=90" data-fancybox="gallery" data-caption="Event Branding"><img src="https://images.unsplash.com/photo-1597733336794-12d4cab63b19?w=800&q=80" class="portfolio-img" alt="Event"></a>
+      <a href="https://images.unsplash.com/photo-1634942537034-253175d1ff2e?w=1200&q=90" data-fancybox="gallery" data-caption="Illustration Work"><img src="https://images.unsplash.com/photo-1634942537034-253175d1ff2e?w=800&q=80" class="portfolio-img" alt="Illustration"></a>
     </div>
   </section>
 
@@ -156,19 +138,19 @@
     <h2>Client <span>Testimonials</span></h2>
     <div class="grid">
       <div class="testimonial-card">
-        <img src="https://files.catbox.moe/client1.jpg" alt="Amina">
-        <h4>Amina K.</h4><p>CEO, Safari Brew</p><div class="stars">★★★★★</div>
-        <p>"Best designer I've worked with. Transformed our brand completely!"</p>
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
+        <h4>Sarah M.</h4><p>CEO, Azura Cosmetics</p><div class="stars">★★★★★</div>
+        <p>"The best designer in Tanzania! My brand looks premium now."</p>
       </div>
       <div class="testimonial-card">
-        <img src="https://files.catbox.moe/client2.jpg" alt="Juma">
-        <h4>Juma M.</h4><p>Founder, TechHub DSM</p><div class="stars">★★★★★</div>
-        <p>"Professional, fast, and super creative. 10/10!"</p>
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John">
+        <h4>John K.</h4><p>Founder, TechStart</p><div class="stars">★★★★★</div>
+        <p>"Fast, creative, and professional. Highly recommend!"</p>
       </div>
       <div class="testimonial-card">
-        <img src="https://files.catbox.moe/client3.jpg" alt="Fatma">
-        <h4>Fatma S.</h4><p>Owner, Nyota Fashion</p><div class="stars">★★★★★</div>
-        <p>"My sales doubled after the rebrand. Thank you!"</p>
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Fatma">
+        <h4>Fatma A.</h4><p>Owner, Nyota Fashion</p><div class="stars">★★★★★</div>
+        <p>"Sales increased 40% after the rebrand. Amazing work!"</p>
       </div>
     </div>
   </section>
@@ -177,19 +159,17 @@
   <section id="services" style="background:#111;">
     <h2>Services <span>& Pricing</span></h2>
     <div class="grid">
-      <div class="card"><h3>Logo Design</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 25,000+</p><small>Full package available</small></div>
-      <div class="card"><h3>Brand Identity</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 70,000+</p><small>Logo + cards + social kit</small></div>
-      <div class="card"><h3>Packaging Design</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 50,000+</p><small>Premium look</small></div>
-      <div class="card"><h3>Social Media Graphics</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 10,000/post</p><small>Unlimited revisions</small></div>
+      <div class="card"><h3>Logo Design</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 25,000+</p><small>Unlimited revisions</small></div>
+      <div class="card"><h3>Brand Identity</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 70,000+</p><small>Full package</small></div>
+      <div class="card"><h3>Packaging Design</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 50,000+</p><small>Premium quality</small></div>
+      <div class="card"><h3>Social Media Graphics</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 10,000/post</p><small>High engagement</small></div>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact">
     <h2>Get in <span>Touch</span></h2>
-    <p style="font-size:1.3rem;max-width:700px;margin:0 auto 40px;">
-      Ready to grow your brand? Message me right now!
-    </p>
+    <p style="font-size:1.3rem;max-width:700px;margin:0 auto 40px;">Ready to grow your brand? Let's talk!</p>
 
     <form action="https://formspree.io/f/fortunatusmagere1@gmail.com" method="POST" style="max-width:600px;margin:0 auto 60px">
       <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:15px;margin:10px 0;border-radius:10px;border:none;background:#222;color:white;">
@@ -198,41 +178,32 @@
       <button type="submit" class="btn">Send Message</button>
     </form>
 
-    <a href="https://wa.me/255629073169?text=Hi%20NineGraffx!%20I%20saw%20your%20website%20and%20need%20design%20work" class="btn wa-big">Message on WhatsApp Now</a>
+    <a href="https://wa.me/255629073169?text=Hi%20NineGraffx!%20I%20saw%20your%20website%20and%20need%20design%20work" class="btn wa-big">Chat on WhatsApp Now</a>
   </section>
 
-  <!-- WhatsApp Floating Button -->
+  <!-- WhatsApp Button -->
   <a href="https://wa.me/255629073169?text=Hi%20NineGraffx!%20I%20saw%20your%20website" class="wa-btn" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- Fancybox Script for Full Image View -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
   <script>
     Fancybox.bind("[data-fancybox]", {});
-  </script>
-
-  <!-- Counters Script -->
-  <script>
-    document.querySelectorAll('.counter-num').forEach(counter => {
-      const target = +counter.getAttribute('data-target');
+    // Counter animation
+    document.querySelectorAll('.counter-num').forEach(c => {
+      const target = +c.dataset.target;
       let count = 0;
-      const updateCounter = () => {
-        const increment = target / 100;
+      const update = () => {
+        const inc = target / 100;
         if (count < target) {
-          count += increment;
-          counter.innerText = Math.ceil(count);
-          setTimeout(updateCounter, 30);
-        } else {
-          counter.innerText = target + '+';
-        }
+          count += inc;
+          c.innerText = Math.ceil(count);
+          setTimeout(update, 30);
+        } else c.innerText = target + '+';
       };
-      const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) updateCounter();
-      }, { threshold: 0.5 });
-      observer.observe(counter.parentElement);
+      new IntersectionObserver(e => e[0].isIntersecting && update(), {threshold: 0.5}).observe(c.parentElement);
     });
   </script>
-
 </body>
 </html>
