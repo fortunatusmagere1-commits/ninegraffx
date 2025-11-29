@@ -1,118 +1,143 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="sw">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NineGraffx | Premium Graphic Designer Tanzania</title>
-  <meta name="description" content="Professional Graphic Design | Logo, Branding, Packaging | Dar es Salaam, Tanzania" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NineGraffx | Mbunifu Bora wa Picha Tanzania</title>
+  <meta name="description" content="Logo, Branding, Packaging, Posta za Mitandao | Dar es Salaam"/>
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/twentytwenty@1.0.0/css/twentytwenty.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
-    :root { --gold:#f1c40f; --dark:#0a0a0a; --gray:#1a1a1a; --text:#eee; --transition:all 0.4s ease; }
+    :root { --gold: #f1c40f; --dark: #0f0f0f; --gray: #1a1a1a; --light: #eee; }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Poppins',sans-serif; background:var(--dark); color:var(--text); line-height:1.7; overflow-x:hidden; }
-    a { text-decoration:none; color:inherit; }
+    body { font-family:'Poppins',sans-serif; background:var(--dark); color:var(--light); line-height:1.7; }
 
-    nav { position:fixed; top:0; width:100%; padding:20px 60px; display:flex; justify-content:space-between; align-items:center; z-index:1000; background:rgba(0,0,0,0.9); backdrop-filter:blur(10px); }
-    nav.scrolled { padding:15px 60px; box-shadow:0 5px 25px rgba(0,0,0,0.5); }
+    /* Navbar */
+    nav {
+      position:fixed; top:0; width:100%; padding:20px 5%; display:flex; justify-content:space-between; align-items:center;
+      background:rgba(0,0,0,0.8); backdrop-filter:blur(10px); z-index:1000;
+    }
     .logo { font-family:'Playfair Display',serif; font-size:2.5rem; color:var(--gold); font-weight:700; }
-    nav ul { display:flex; gap:40px; list-style:none; }
-    nav ul li a { color:var(--text); position:relative; }
-    nav ul li a::after { content:''; position:absolute; width:0; height:2px; bottom:-8px; left:0; background:var(--gold); transition:var(--transition); }
-    nav ul li a:hover { color:var(--gold); }
-    nav ul li a:hover::after { width:100%; }
+    .nav-links { display:flex; gap:40px; }
+    .nav-links a { color:var(--light); font-weight:500; position:relative; }
+    .nav-links a::after { content:''; position:absolute; width:0; height:2px; bottom:-5px; left:0; background:var(--gold); transition:0.4s; }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-links a:hover::after { width:100%; }
 
-    #home { height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; overflow:hidden; }
-    #particles { position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; }
-    .hero-content { position:relative; z-index:2; max-width:900px; padding:20px; }
-    .hero-content h1 { font-family:'Playfair Display',serif; font-size:6rem; background:linear-gradient(90deg,#fff,var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-    .typing { font-size:1.8rem; color:var(--gold); margin:20px 0; height:50px; font-weight:500; }
-    .btn { padding:15px 45px; background:var(--gold); color:#000; border:none; border-radius:50px; font-weight:600; cursor:pointer; transition:var(--transition); box-shadow:0 10px 30px rgba(241,196,15,0.4); }
+    /* Hero */
+    .hero {
+      height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558655146-9f40138ed1cb?q=80&w=1964') center/cover;
+    }
+    .hero h1 { font-family:'Playfair Display',serif; font-size:5.5rem; margin-bottom:20px; }
+    .hero p { font-size:1.4rem; margin:20px 0 40px; }
+    .btn { padding:16px 40px; background:var(--gold); color:#000; border:none; border-radius:50px; font-weight:600; font-size:1.1rem; cursor:pointer; box-shadow:0 10px 30px rgba(241,196,15,0.4); transition:0.4s; }
     .btn:hover { transform:translateY(-5px); box-shadow:0 15px 40px rgba(241,196,15,0.6); }
-    .calendly-btn { background:#00a2ff !important; }
 
-    section { padding:120px 60px; }
-    h2 { font-family:'Playfair Display',serif; font-size:3.5rem; text-align:center; margin-bottom:70px; }
+    /* Sections */
+    section { padding:100px 5%; text-align:center; }
+    h2 { font-family:'Playfair Display',serif; font-size:3.5rem; margin-bottom:60px; }
     h2 span { color:var(--gold); }
 
-    .counters { display:flex; justify-content:center; gap:80px; flex-wrap:wrap; margin:50px 0; text-align:center; }
-    .counter-item h3 { font-size:3.5rem; color:var(--gold); }
-    .counter-item p { font-size:1.1rem; }
-
-    .before-after { max-width:800px; margin:50px auto; border-radius:15px; overflow:hidden; box-shadow:0 15px 40px rgba(0,0,0,0.6); }
-    .twentytwenty-container { height:500px; }
-
-    .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:30px; max-width:1400px; margin:0 auto; }
-    .portfolio-item { position:relative; border-radius:15px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.6); transition:var(--transition); }
-    .portfolio-item:hover { transform:translateY(-15px); }
-    .portfolio-item img { width:100%; height:100%; object-fit:cover; transition:var(--transition); }
-    .portfolio-item:hover img { transform:scale(1.15); }
-    .overlay { position:absolute; inset:0; background:linear-gradient(transparent,rgba(0,0,0,0.9)); display:flex; align-items:flex-end; padding:30px; opacity:0; transition:var(--transition); }
-    .portfolio-item:hover .overlay { opacity:1; }
-    .overlay h3 { color:var(--gold); font-size:1.6rem; }
-
-    .testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; max-width:1200px; margin:0 auto; }
-    .testimonial-card { background:var(--gray); padding:30px; border-radius:15px; text-align:center; }
-    .testimonial-card img { width:80px; height:80px; border-radius:50%; margin-bottom:15px; object-fit:cover; border:4px solid var(--gold); }
-    .stars { color:var(--gold); margin:10px 0; }
-
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; max-width:1200px; margin:0 auto; }
-    .service-item { background:var(--gray); padding:30px; border-radius:15px; text-align:center; transition:var(--transition); cursor:pointer; }
-    .service-item:hover { background:var(--gold); color:#000; transform:translateY(-10px); }
-
-    form { max-width:600px; margin:60px auto 0; display:grid; gap:20px; }
-    input, textarea { padding:15px; border:none; border-radius:10px; background:#222; color:var(--text); }
-    input:focus, textarea:focus { outline:2px solid var(--gold); }
-
-    /* WHATSAPP BUTTON – FIXED & 100% WORKING */
-    .whatsapp-button {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      z-index: 999999999;
-      animation: pulse 2s infinite;
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:30px; max-width:1400px; margin:0 auto; }
+    .card {
+      background:var(--gray); padding:30px; border-radius:15px; transition:0.4s; cursor:pointer;
     }
-    .whatsapp-button img {
-      width: 65px;
-      height: 65px;
-      filter: drop-shadow(0 4px 15px rgba(37,211,102,0.7));
-      transition: transform 0.3s ease;
+    .card:hover { transform:translateY(-15px); box-shadow:0 20px 40px rgba(0,0,0,0.6); }
+
+    .portfolio-img { width:100%; border-radius:12px; transition:0.4s; }
+    .portfolio-img:hover { transform:scale(1.05); }
+
+    /* WhatsApp Button – HII HAINA SHIDA KABISA */
+    .wa-btn {
+      position:fixed; bottom:25px; right:25px; z-index:9999;
+      width:70px; height:70px; background:#25D366; border-radius:50%;
+      display:flex; align-items:center; justify-content:center; font-size:38px; color:white;
+      box-shadow:0 5px 25px rgba(37,211,102,0.8); animation:pulse 2s infinite;
     }
-    .whatsapp-button:hover img {
-      transform: scale(1.2);
-    }
+    .wa-btn:hover { transform:scale(1.15); }
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
-      70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
-      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+      0% { box-shadow:0 0 0 0 rgba(37,211,102,0.7); }
+      70% { box-shadow:0 0 0 20px rgba(37,211,102,0); }
+      100% { box-shadow:0 0 0 0 rgba(37,211,102,0); }
     }
 
-    .modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); z-index:2000; align-items:center; justify-content:center; }
-    .modal-content { background:var(--gray); padding:40px; border-radius:15px; text-align:center; max-width:400px; border:2px solid var(--gold); position:relative; }
-    .close { position:absolute; top:15px; right:20px; font-size:2rem; color:var(--gold); cursor:pointer; }
-
-    @media (max-width:768px) { nav{padding:15px 20px;} .hero-content h1{font-size:4rem;} section{padding:80px 20px;} h2{font-size:2.8rem;} }
+    @media (max-width:768px) {
+      .hero h1 { font-size:3.8rem; }
+      .nav-links { gap:20px; font-size:0.95rem; }
+      section { padding:80px 5%; }
+    }
   </style>
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav id="navbar">
+  <nav>
     <div class="logo">NineGraffx</div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-links">
+      <a href="#home">Nyumbani</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#services">Huduma</a>
+      <a href="#contact">Wasiliana</a>
+    </div>
   </nav>
 
   <!-- Hero -->
-  <section id="home">
-    <canvas id="particles"></canvas>
+  <section id="home" class="hero">
+    <div>
+      <h1>NineGraffx</h1>
+      <p>Mbunifu wa Picha Bora • Logo • Branding • Packaging • Posta za Mitandao</p>
+      <p style="font-size:2rem; color:var(--gold); margin:30px 0;">Dar es Salaam, Tanzania</p>
+      <a href="#contact" class="btn">Anza Mradi Wako Leo</a>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <h2>Portfolio Yangu <span>Kazi Zangu</span></h2>
+    <div class="grid">
+      <img src="https://files.catbox.moe/0zq1i8.jpg" alt="Logo" class="portfolio-img">
+      <img src="https://files.catbox.moe/7l2i9p.jpg" alt="Branding" class="portfolio-img">
+      <img src="https://files.catbox.moe/3m8x5v.jpg" alt="Packaging" class="portfolio-img">
+      <img src="https://files.catbox.moe/9k4p2r.jpg" alt="Social Media" class="portfolio-img">
+      <img src="https://files.catbox.moe/1f6h8j.jpg" alt="Event" class="portfolio-img">
+      <img src="https://files.catbox.moe/5n9m3x.jpg" alt="Illustration" class="portfolio-img">
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" style="background:#111;">
+    <h2>Huduma <span>& Bei</span></h2>
+    <div class="grid">
+      <div class="card"><h3>Logo Design</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 25,000+</p><small>Kutoka nembo moja mpaka set nzima</small></div>
+      <div class="card"><h3>Brand Identity</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 70,000+</p><small>Logo + Business card + Social kit</small></div>
+      <div class="card"><h3>Packaging</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 50,000+</p><small>Box, labels, stickers</small></div>
+      <div class="card"><h3>Posta za Mitandao</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 10,000/post</p><small>Instagram, Facebook, TikTok</small></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Wasiliana <span>Nami</span></h2>
+    <p style="font-size:1.3rem;max-width:700px;margin:0 auto 40px;">
+      Unahitaji logo? Branding? Posta za mitandao? Tuma ujumbe au nipigie WhatsApp mara moja!
+    </p>
+
+    <form action="https://formspree.io/f/fortunatusmagere1@gmail.com" method="POST" style="max-width:600px;margin:0 auto 60px">
+      <input type="text" name="name" placeholder="Jina lako" required style="width:100%;padding:15px;margin:10px 0;border-radius:10px;border:none;background:#222;color:white;">
+      <input type="email" name="email" placeholder="Barua pepe" required style="width:100%;padding:15px;margin:10px 0;border-radius:10px;border:none;background:#222;color:white;">
+      <textarea name="message" rows="6" placeholder="Eleza unachohitaji..." required style="width:100%;padding:15px;margin:10px 0;border-radius:10px;border:none;background:#222;color:white;"></textarea>
+      <button type="submit" class="btn">Tuma Ujumbe</button>
+    </form>
+
+    <a href="https://wa.me/255629073169?text=Habari%20NineGraffx!%20Nimetoka%20website%20yako%20na%20nahitaji%20huduma" class="btn" style="background:#25D366;color:white;">Nipigie WhatsApp Moja kwa Moja</a>
+  </section>
+
+  <!-- WhatsApp Float Button – HAINA SHIDA KABISA -->
+  <a href="https://wa.me/255629073169?text=Habari%20NineGraffx!%20Nimetoka%20website%20yako" class="wa-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+</body>
+</html>
