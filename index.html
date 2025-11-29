@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NineGraffx | Mbunifu Bora wa Picha Tanzania</title>
-  <meta name="description" content="Logo, Branding, Packaging, Posta za Mitandao | Dar es Salaam"/>
+  <title>NineGraffx | Premium Graphic Designer Tanzania</title>
+  <meta name="description" content="Logo Design, Branding, Packaging, Social Media Graphics | Dar es Salaam"/>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -28,12 +28,14 @@
 
     /* Hero */
     .hero {
-      height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558655146-9f40138ed1cb?q=80&w=1964') center/cover;
+      height:100vh; display:flex; align-items:center; justify-content:center; text-align:center;
+      background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1558655146-9f40138ed1cb?q=80&w=1964') center/cover no-repeat;
     }
     .hero h1 { font-family:'Playfair Display',serif; font-size:5.5rem; margin-bottom:20px; }
     .hero p { font-size:1.4rem; margin:20px 0 40px; }
     .btn { padding:16px 40px; background:var(--gold); color:#000; border:none; border-radius:50px; font-weight:600; font-size:1.1rem; cursor:pointer; box-shadow:0 10px 30px rgba(241,196,15,0.4); transition:0.4s; }
     .btn:hover { transform:translateY(-5px); box-shadow:0 15px 40px rgba(241,196,15,0.6); }
+    .wa-big { background:#25D366 !important; color:white !important; }
 
     /* Sections */
     section { padding:100px 5%; text-align:center; }
@@ -42,14 +44,14 @@
 
     .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:30px; max-width:1400px; margin:0 auto; }
     .card {
-      background:var(--gray); padding:30px; border-radius:15px; transition:0.4s; cursor:pointer;
+      background:var(--gray); padding:30px; border-radius:15px; transition:0.4s;
     }
     .card:hover { transform:translateY(-15px); box-shadow:0 20px 40px rgba(0,0,0,0.6); }
 
-    .portfolio-img { width:100%; border-radius:12px; transition:0.4s; }
+    .portfolio-img { width:100%; height:100%; object-fit:cover; border-radius:12px; transition:0.4s; }
     .portfolio-img:hover { transform:scale(1.05); }
 
-    /* WhatsApp Button – HII HAINA SHIDA KABISA */
+    /* WhatsApp Float – 100% WORKING */
     .wa-btn {
       position:fixed; bottom:25px; right:25px; z-index:9999;
       width:70px; height:70px; background:#25D366; border-radius:50%;
@@ -76,10 +78,10 @@
   <nav>
     <div class="logo">NineGraffx</div>
     <div class="nav-links">
-      <a href="#home">Nyumbani</a>
+      <a href="#home">Home</a>
       <a href="#portfolio">Portfolio</a>
-      <a href="#services">Huduma</a>
-      <a href="#contact">Wasiliana</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 
@@ -87,55 +89,55 @@
   <section id="home" class="hero">
     <div>
       <h1>NineGraffx</h1>
-      <p>Mbunifu wa Picha Bora • Logo • Branding • Packaging • Posta za Mitandao</p>
+      <p>Premium Graphic Design • Logo • Branding • Packaging • Social Media</p>
       <p style="font-size:2rem; color:var(--gold); margin:30px 0;">Dar es Salaam, Tanzania</p>
-      <a href="#contact" class="btn">Anza Mradi Wako Leo</a>
+      <a href="#contact" class="btn">Start Your Project Today</a>
     </div>
   </section>
 
   <!-- Portfolio -->
   <section id="portfolio">
-    <h2>Portfolio Yangu <span>Kazi Zangu</span></h2>
+    <h2>My <span>Portfolio</span></h2>
     <div class="grid">
-      <img src="https://files.catbox.moe/0zq1i8.jpg" alt="Logo" class="portfolio-img">
+      <img src="https://files.catbox.moe/0zq1i8.jpg" alt="Logo Design" class="portfolio-img">
       <img src="https://files.catbox.moe/7l2i9p.jpg" alt="Branding" class="portfolio-img">
       <img src="https://files.catbox.moe/3m8x5v.jpg" alt="Packaging" class="portfolio-img">
       <img src="https://files.catbox.moe/9k4p2r.jpg" alt="Social Media" class="portfolio-img">
-      <img src="https://files.catbox.moe/1f6h8j.jpg" alt="Event" class="portfolio-img">
+      <img src="https://files.catbox.moe/1f6h8j.jpg" alt="Event Branding" class="portfolio-img">
       <img src="https://files.catbox.moe/5n9m3x.jpg" alt="Illustration" class="portfolio-img">
     </div>
   </section>
 
   <!-- Services -->
   <section id="services" style="background:#111;">
-    <h2>Huduma <span>& Bei</span></h2>
+    <h2>Services <span>& Pricing</span></h2>
     <div class="grid">
-      <div class="card"><h3>Logo Design</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 25,000+</p><small>Kutoka nembo moja mpaka set nzima</small></div>
-      <div class="card"><h3>Brand Identity</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 70,000+</p><small>Logo + Business card + Social kit</small></div>
-      <div class="card"><h3>Packaging</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 50,000+</p><small>Box, labels, stickers</small></div>
-      <div class="card"><h3>Posta za Mitandao</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 10,000/post</p><small>Instagram, Facebook, TikTok</small></div>
+      <div class="card"><h3>Logo Design</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 25,000+</p><small>From single logo to full package</small></div>
+      <div class="card"><h3>Brand Identity</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 70,000+</p><small>Logo + Business Cards + Social Media Kit</small></div>
+      <div class="card"><h3>Packaging Design</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 50,000+</p><small>Boxes, labels, stickers</small></div>
+      <div class="card"><h3>Social Media Graphics</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 10,000 per post</p><small>Instagram, Facebook, TikTok, etc.</small></div>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact">
-    <h2>Wasiliana <span>Nami</span></h2>
+    <h2>Get in <span>Touch</span></h2>
     <p style="font-size:1.3rem;max-width:700px;margin:0 auto 40px;">
-      Unahitaji logo? Branding? Posta za mitandao? Tuma ujumbe au nipigie WhatsApp mara moja!
+      Need a logo, branding, packaging, or social media graphics? Send me a message or hit the WhatsApp button right now!
     </p>
 
     <form action="https://formspree.io/f/fortunatusmagere1@gmail.com" method="POST" style="max-width:600px;margin:0 auto 60px">
-      <input type="text" name="name" placeholder="Jina lako" required style="width:100%;padding:15px;margin:10px 0;border-radius:10px;border:none;background:#222;color:white;">
-      <input type="email" name="email" placeholder="Barua pepe" required style="width:100%;padding:15px;margin:10px 0;border-radius:10px;border:none;background:#222;color:white;">
-      <textarea name="message" rows="6" placeholder="Eleza unachohitaji..." required style="width:100%;padding:15px;margin:10px 0;border-radius:10px;border:none;background:#222;color:white;"></textarea>
-      <button type="submit" class="btn">Tuma Ujumbe</button>
+      <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:15px;margin:10px 0;border-radius:10px;border:none;background:#222;color:white;">
+      <input type="email" name="email" placeholder="Your Email" required style="width:100%;padding:15px;margin:10px 0;border-radius:10px;border:none;background:#222;color:white;">
+      <textarea name="message" rows="6" placeholder="Tell me about your project..." required style="width:100%;padding:15px;margin:10px 0;border-radius:10px;border:none;background:#222;color:white;"></textarea>
+      <button type="submit" class="btn">Send Message</button>
     </form>
 
-    <a href="https://wa.me/255629073169?text=Habari%20NineGraffx!%20Nimetoka%20website%20yako%20na%20nahitaji%20huduma" class="btn" style="background:#25D366;color:white;">Nipigie WhatsApp Moja kwa Moja</a>
+    <a href="https://wa.me/255629073169?text=Hi%20NineGraffx!%20I%20came%20from%20your%20website%20and%20need%20design%20work" class="btn wa-big">Message on WhatsApp Now</a>
   </section>
 
-  <!-- WhatsApp Float Button – HAINA SHIDA KABISA -->
-  <a href="https://wa.me/255629073169?text=Habari%20NineGraffx!%20Nimetoka%20website%20yako" class="wa-btn" target="_blank">
+  <!-- WhatsApp Floating Button – WORKING 100% -->
+  <a href="https://wa.me/255629073169?text=Hi%20NineGraffx!%20I%20came%20from%20your%20website" class="wa-btn" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
