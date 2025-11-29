@@ -14,7 +14,6 @@
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family:'Poppins',sans-serif; background:var(--dark); color:var(--light); line-height:1.7; }
 
-    /* Navbar */
     nav {
       position:fixed; top:0; width:100%; padding:20px 5%; display:flex; justify-content:space-between; align-items:center;
       background:rgba(0,0,0,0.8); backdrop-filter:blur(10px); z-index:1000;
@@ -26,7 +25,6 @@
     .nav-links a:hover { color:var(--gold); }
     .nav-links a:hover::after { width:100%; }
 
-    /* Hero */
     .hero {
       height:100vh; display:flex; align-items:center; justify-content:center; text-align:center;
       background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1558655146-9f40138ed1cb?q=80&w=1964') center/cover no-repeat;
@@ -37,7 +35,6 @@
     .btn:hover { transform:translateY(-5px); box-shadow:0 15px 40px rgba(241,196,15,0.6); }
     .wa-big { background:#25D366 !important; color:white !important; }
 
-    /* Sections */
     section { padding:100px 5%; text-align:center; }
     h2 { font-family:'Playfair Display',serif; font-size:3.5rem; margin-bottom:60px; }
     h2 span { color:var(--gold); }
@@ -51,7 +48,17 @@
     .portfolio-img { width:100%; height:100%; object-fit:cover; border-radius:12px; transition:0.4s; }
     .portfolio-img:hover { transform:scale(1.05); }
 
-    /* WhatsApp Float – 100% WORKING */
+    /* Testimonials */
+    .testimonial-card {
+      background:var(--gray); padding:40px 30px; border-radius:15px; text-align:center; border-left:5px solid var(--gold);
+    }
+    .testimonial-card img {
+      width:80px; height:80px; border-radius:50%; border:4px solid var(--gold); margin-bottom:20px;
+    }
+    .stars { color:var(--gold); font-size:1.5rem; margin:15px 0; }
+    .testimonial-card p { font-style:italic; }
+
+    /* WhatsApp Float */
     .wa-btn {
       position:fixed; bottom:25px; right:25px; z-index:9999;
       width:70px; height:70px; background:#25D366; border-radius:50%;
@@ -80,6 +87,7 @@
     <div class="nav-links">
       <a href="#home">Home</a>
       <a href="#portfolio">Portfolio</a>
+      <a href="#testimonials">Testimonials</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </div>
@@ -108,14 +116,49 @@
     </div>
   </section>
 
+  <!-- Testimonials (Vikolombwezo) -->
+  <section id="testimonials" style="background:#111;">
+    <h2>Client <span>Testimonials</span></h2>
+    <div class="grid">
+      <div class="testimonial-card">
+        <img src="https://files.catbox.moe/client1.jpg" alt="Amina">
+        <h4>Amina K.</h4>
+        <p>CEO, Safari Brew</p>
+        <div class="stars">★★★★★</div>
+        <p>"NineGraffx gave our brand a complete makeover – sales up 200%! Best decision ever."</p>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://files.catbox.moe/client2.jpg" alt="Juma">
+        <h4>Juma M.</h4>
+        <p>Founder, TechHub DSM</p>
+        <div class="stars">★★★★★</div>
+        <p>"Professional, creative, and super fast delivery. Highly recommend to anyone!"</p>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://files.catbox.moe/client3.jpg" alt="Fatma">
+        <h4>Fatma S.</h4>
+        <p>Owner, Nyota Fashion</p>
+        <div class="stars">★★★★★</div>
+        <p>"My packaging now looks premium! Customers love it. Worth every shilling."</p>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael">
+        <h4>Michael R.</h4>
+        <p>Marketing Director, Azam Media</p>
+        <div class="stars">★★★★★</div>
+        <p>"Best social media designs in Tanzania. Our engagement went through the roof!"</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Services -->
   <section id="services" style="background:#111;">
     <h2>Services <span>& Pricing</span></h2>
     <div class="grid">
       <div class="card"><h3>Logo Design</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 25,000+</p><small>From single logo to full package</small></div>
-      <div class="card"><h3>Brand Identity</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 70,000+</p><small>Logo + Business Cards + Social Media Kit</small></div>
+      <div class="card"><h3>Brand Identity</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 70,000+</p><small>Logo + Business Cards + Social Kit</small></div>
       <div class="card"><h3>Packaging Design</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 50,000+</p><small>Boxes, labels, stickers</small></div>
-      <div class="card"><h3>Social Media Graphics</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 10,000 per post</p><small>Instagram, Facebook, TikTok, etc.</small></div>
+      <div class="card"><h3>Social Media Graphics</h3><p style="font-size:2rem;color:var(--gold);margin:20px 0">Tsh 10,000/post</p><small>Instagram, Facebook, TikTok</small></div>
     </div>
   </section>
 
@@ -123,7 +166,7 @@
   <section id="contact">
     <h2>Get in <span>Touch</span></h2>
     <p style="font-size:1.3rem;max-width:700px;margin:0 auto 40px;">
-      Need a logo, branding, packaging, or social media graphics? Send me a message or hit the WhatsApp button right now!
+      Ready to level up your brand? Message me now – let's make it happen!
     </p>
 
     <form action="https://formspree.io/f/fortunatusmagere1@gmail.com" method="POST" style="max-width:600px;margin:0 auto 60px">
@@ -133,7 +176,7 @@
       <button type="submit" class="btn">Send Message</button>
     </form>
 
-    <a href="https://wa.me/255629073169?text=Hi%20NineGraffx!%20I%20came%20from%20your%20website%20and%20need%20design%20work" class="btn wa-big">Message on WhatsApp Now</a>
+    <a href="https://wa.me/255629073169?text=Hi%20NineGraffx!%20I%20came%20from%20your%20website%20and%20need%20design%20design%20work" class="btn wa-big">Message on WhatsApp Now</a>
   </section>
 
   <!-- WhatsApp Floating Button – WORKING 100% -->
